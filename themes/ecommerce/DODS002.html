@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Running Shoes | DODS Commerce</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f8fa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .top-bar {
+      background: #111827;
+      color: #fff;
+      text-align: center;
+      padding: 8px 15px;
+      font-size: 13px;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    .search-box {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .cart-link {
+      background: #2563eb;
+      color: white;
+      padding: 11px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .nav {
+      background: #fff;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 20px;
+      display: flex;
+      gap: 22px;
+      overflow-x: auto;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .nav-inner a:hover {
+      color: #2563eb;
+    }
+
+    .breadcrumb {
+      max-width: 1200px;
+      margin: 25px auto 0;
+      padding: 0 20px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .breadcrumb a {
+      color: #2563eb;
+    }
+
+    .product-section {
+      max-width: 1200px;
+      margin: 20px auto 60px;
+      padding: 0 20px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .product-image {
+      min-height: 450px;
+      background: #f1f5f9;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 80%;
+      max-width: 420px;
+      height: auto;
+      display: block;
+    }
+
+    .product-info {
+      padding: 15px 0;
+    }
+
+    .category {
+      display: inline-block;
+      background: #eff6ff;
+      color: #2563eb;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .product-title {
+      font-size: 38px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+      color: #111827;
+    }
+
+    .rating {
+      margin-bottom: 18px;
+      color: #f59e0b;
+      font-size: 15px;
+    }
+
+    .rating span {
+      color: #6b7280;
+      margin-left: 8px;
+    }
+
+    .price {
+      font-size: 32px;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      color: #4b5563;
+      margin-bottom: 25px;
+      font-size: 16px;
+    }
+
+    .features {
+      margin-bottom: 25px;
+    }
+
+    .features h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .features ul {
+      padding-left: 20px;
+      color: #4b5563;
+    }
+
+    .features li {
+      margin-bottom: 6px;
+    }
+
+    .quantity-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .quantity-box label {
+      font-weight: 700;
+    }
+
+    .quantity-box input {
+      width: 70px;
+      padding: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 7px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      padding: 14px 22px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .add-cart {
+      background: #111827;
+      color: #fff;
+    }
+
+    .buy-now {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .back-shop {
+      display: inline-block;
+      margin-top: 25px;
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    .lab-note {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .lab-box {
+      background: #eef6ff;
+      border: 1px solid #bfdbfe;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .lab-box h3 {
+      margin-bottom: 8px;
+      color: #1d4ed8;
+    }
+
+    .lab-box p {
+      color: #374151;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #111827;
+      color: #fff;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    footer p {
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+
+      .header-main {
+        flex-wrap: wrap;
+      }
+
+      .search-box {
+        order: 3;
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+
+      .product-card {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 20px;
+      }
+
+      .product-image {
+        min-height: 320px;
+      }
+
+      .product-title {
+        font-size: 30px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    🚚 Free shipping on selected orders | Performance Marketing Lab Demo Store
+  </div>
+
+  <header>
+
+    <div class="header-main">
+
+      <a href="index.html" class="logo">
+        DODS<span>Commerce</span>
+      </a>
+
+      <div class="search-box">
+        <input
+          type="text"
+          placeholder="Search products..."
+          aria-label="Search products"
+        >
+      </div>
+
+      <a
+        href="cart.html"
+        class="cart-link"
+        data-event="cart_view_click"
+      >
+        🛒 Cart
+      </a>
+
+    </div>
+
+    <nav class="nav">
+
+      <div class="nav-inner">
+
+        <a href="index.html">Home</a>
+        <a href="index.html#products">All Products</a>
+        <a href="index.html#categories">Electronics</a>
+        <a href="index.html#categories">Fashion</a>
+        <a href="index.html#categories">Fitness</a>
+        <a href="index.html#categories">Home & Living</a>
+        <a href="index.html#categories">Accessories</a>
+        <a href="index.html#offers">Offers</a>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+  <div class="breadcrumb">
+
+    <a href="index.html">Home</a>
+    /
+    <a href="index.html#products">Fitness</a>
+    /
+    Running Shoes
+
+  </div>
+
+  <main class="product-section">
+
+    <div
+      class="product-card"
+      data-product-id="DODS002"
+      data-product-name="Running Shoes"
+      data-product-price="1999"
+    >
+
+      <div class="product-image">
+
+        <img
+          src="assets/products/DODS002.svg"
+          alt="DODS002 Running Shoes"
+        >
+
+      </div>
+
+      <div class="product-info">
+
+        <span class="category">
+          Fitness
+        </span>
+
+        <h1 class="product-title">
+          Running Shoes
+        </h1>
+
+        <div class="rating">
+          ★★★★★
+          <span>4.7 / 5 · 98 Reviews</span>
+        </div>
+
+        <div class="price">
+          ₹1,999
+        </div>
+
+        <p class="description">
+          Lightweight and comfortable running shoes designed
+          for daily workouts, jogging, walking and active
+          lifestyles.
+        </p>
+
+        <div class="features">
+
+          <h3>Product Features</h3>
+
+          <ul>
+            <li>Lightweight construction</li>
+            <li>Comfortable cushioning</li>
+            <li>Breathable upper material</li>
+            <li>Durable non-slip outsole</li>
+            <li>Suitable for running and daily workouts</li>
+          </ul>
+
+        </div>
+
+        <div class="quantity-box">
+
+          <label for="quantity">
+            Quantity:
+          </label>
+
+          <input
+            type="number"
+            id="quantity"
+            min="1"
+            max="10"
+            value="1"
+          >
+
+        </div>
+
+        <div class="button-group">
+
+          <button
+            type="button"
+            class="add-cart"
+            data-event="add_to_cart"
+            onclick="addToCart(false)"
+          >
+            🛒 Add to Cart
+          </button>
+
+          <button
+            type="button"
+            class="buy-now"
+            data-event="buy_now_click"
+            onclick="addToCart(true)"
+          >
+            Buy & Continue to Cart
+          </button>
+
+        </div>
+
+        <a
+          href="index.html"
+          class="back-shop"
+          data-event="back_to_shop_click"
+        >
+          ← Back to Shop
+        </a>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <section class="lab-note">
+
+    <div class="lab-box">
+
+      <h3>🧪 Performance Marketing Lab</h3>
+
+      <p>
+        This product page is intentionally built as a
+        tracking-ready testing environment. Marketers can
+        configure their own tracking systems for product views,
+        add-to-cart, checkout and purchase events.
+        No third-party tracking scripts are installed by default.
+      </p>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    <p>
+      © 2026 DODS Commerce · Performance Marketing Lab
+    </p>
+
+  </footer>
+
+  <script>
+
+    const product = {
+      id: "DODS002",
+      title: "Running Shoes",
+      price: 1999,
+      quantity: 1
+    };
+
+    function addToCart(goToCart) {
+
+      const quantityInput =
+        document.getElementById("quantity");
+
+      let quantity =
+        parseInt(quantityInput.value, 10);
+
+      if (isNaN(quantity) || quantity < 1) {
+        quantity = 1;
+      }
+
+      if (quantity > 10) {
+        quantity = 10;
+      }
+
+      product.quantity = quantity;
+
+      let cart = JSON.parse(
+        localStorage.getItem("dods_cart") || "[]"
+      );
+
+      const existingProduct = cart.find(
+        item => item.id === product.id
+      );
+
+      if (existingProduct) {
+
+        existingProduct.quantity += quantity;
+
+      } else {
+
+        cart.push({
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          quantity: quantity
+        });
+
+      }
+
+      localStorage.setItem(
+        "dods_cart",
+        JSON.stringify(cart)
+      );
+
+      if (goToCart) {
+
+        window.location.href = "cart.html";
+
+      } else {
+
+        alert(
+          `${quantity} × ${product.title} added to cart.`
+        );
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
