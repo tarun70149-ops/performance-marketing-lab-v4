@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DODS Commerce | Online Store</title>
+
+  <meta
+    name="description"
+    content="DODS Commerce - a practical e-commerce testing environment for performance marketing."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f7;
+      color: #171717;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    /* TOP BAR */
+
+    .top-bar {
+      background: #111111;
+      color: #ffffff;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e8e8e8;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-main {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #555555;
+    }
+
+    .search {
+      flex: 1;
+      max-width: 480px;
+      position: relative;
+    }
+
+    .search input {
+      width: 100%;
+      padding: 13px 17px;
+      border: 1px solid #d9d9d9;
+      border-radius: 7px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .search input:focus {
+      border-color: #222222;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .cart-link {
+      padding: 9px 13px;
+      border: 1px solid #dddddd;
+      border-radius: 7px;
+    }
+
+    .cart-link:hover {
+      background: #f4f4f4;
+    }
+
+    /* NAVIGATION */
+
+    .category-nav {
+      background: #ffffff;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .category-nav-inner {
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .category-nav a {
+      font-size: 13px;
+      color: #555555;
+      font-weight: 600;
+    }
+
+    .category-nav a:hover {
+      color: #000000;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: #eeeeee;
+      padding: 75px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-label {
+      display: inline-block;
+      padding: 7px 11px;
+      background: #111111;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      border-radius: 4px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 590px;
+      color: #5f5f5f;
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .btn-dark {
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .btn-dark:hover {
+      background: #333333;
+    }
+
+    .btn-light {
+      background: #ffffff;
+      border: 1px solid #d5d5d5;
+    }
+
+    .btn-light:hover {
+      background: #f8f8f8;
+    }
+
+    .hero-visual {
+      min-height: 340px;
+      border-radius: 16px;
+      background: #d9d9d9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 110px;
+    }
+
+    /* SECTION */
+
+    .section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      gap: 20px;
+    }
+
+    .section-heading h2 {
+      font-size: 30px;
+      letter-spacing: -1px;
+    }
+
+    .section-heading p {
+      color: #777777;
+      font-size: 14px;
+    }
+
+    /* CATEGORY CARDS */
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .category {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 22px 15px;
+      text-align: center;
+      transition: 0.2s ease;
+    }
+
+    .category:hover {
+      transform: translateY(-3px);
+      border-color: #bbbbbb;
+    }
+
+    .category-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .category h3 {
+      font-size: 14px;
+    }
+
+    /* PRODUCT PREVIEW */
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .product {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .product-image {
+      height: 210px;
+      background: #eeeeee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 70px;
+    }
+
+    .product-info {
+      padding: 18px;
+    }
+
+    .product-category {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #777777;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .product h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .product-btn {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      background: #111111;
+      color: #ffffff;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .product-btn:hover {
+      background: #333333;
+    }
+
+    /* MARKETING LAB NOTE */
+
+    .lab-note {
+      background: #151515;
+      color: #ffffff;
+      border-radius: 15px;
+      padding: 40px;
+    }
+
+    .lab-note h2 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .lab-note p {
+      max-width: 760px;
+      color: #bdbdbd;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #111111;
+      color: #aaaaaa;
+      padding: 40px 0;
+      margin-top: 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    .footer-column h3 {
+      color: #ffffff;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .footer-column p,
+    .footer-column a {
+      font-size: 13px;
+      color: #999999;
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .footer-column a:hover {
+      color: #ffffff;
+    }
+
+    .copyright {
+      border-top: 1px solid #292929;
+      margin-top: 30px;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #777777;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 950px) {
+
+      .search {
+        display: none;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .categories {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .header-main {
+        min-height: 65px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .header-actions {
+        font-size: 12px;
+      }
+
+      .category-nav-inner {
+        gap: 18px;
+      }
+
+      .hero {
+        padding: 55px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-visual {
+        min-height: 250px;
+        font-size: 80px;
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+
+  <div class="top-bar">
+    Free shipping on orders above ₹999 | Performance Marketing Lab Store
+  </div>
+
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="container header-main">
+
+      <a href="index.html" class="logo">
+        DODS<span>Commerce</span>
+      </a>
+
+      <div class="search">
+
+        <input
+          type="search"
+          placeholder="Search products..."
+          aria-label="Search products"
+        >
+
+      </div>
+
+      <div class="header-actions">
+
+        <a href="cart.html" class="cart-link">
+          🛒 Cart
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- CATEGORY NAV -->
+
+    <div class="category-nav">
+
+      <div class="container category-nav-inner">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="#categories">
+          All Products
+        </a>
+
+        <a href="#electronics">
+          Electronics
+        </a>
+
+        <a href="#fashion">
+          Fashion
+        </a>
+
+        <a href="#fitness">
+          Fitness
+        </a>
+
+        <a href="#home-living">
+          Home & Living
+        </a>
+
+        <a href="#accessories">
+          Accessories
+        </a>
+
+        <a href="#offers">
+          Offers
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+        <div>
+
+          <div class="hero-label">
+            DODS COMMERCE
+          </div>
+
+          <h1>
+            Shop Smarter.
+            <br>
+            Live Better.
+          </h1>
+
+          <p>
+            Discover everyday products across electronics,
+            fashion, fitness, home, accessories and more.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a
+              href="#products"
+              class="btn btn-dark"
+              data-event="shop_now_click"
+            >
+              Shop Products →
+            </a>
+
+            <a
+              href="#categories"
+              class="btn btn-light"
+            >
+              Explore Categories
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+          🛍️
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <section class="section" id="categories">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <h2>
+              Shop by Category
+            </h2>
+
+            <p>
+              Explore our product collections.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="categories">
+
+
+          <a href="#electronics" class="category">
+
+            <div class="category-icon">
+              💻
+            </div>
+
+            <h3>
+              Electronics
+            </h3>
+
+          </a>
+
+
+          <a href="#fashion" class="category">
+
+            <div class="category-icon">
+              👕
+            </div>
+
+            <h3>
+              Fashion
+            </h3>
+
+          </a>
+
+
+          <a href="#fitness" class="category">
+
+            <div class="category-icon">
+              🏋️
+            </div>
+
+            <h3>
+              Fitness
+            </h3>
+
+          </a>
+
+
+          <a href="#home-living" class="category">
+
+            <div class="category-icon">
+              🏠
+            </div>
+
+            <h3>
+              Home & Living
+            </h3>
+
+          </a>
+
+
+          <a href="#accessories" class="category">
+
+            <div class="category-icon">
+              🎒
+            </div>
+
+            <h3>
+              Accessories
+            </h3>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FEATURED PRODUCTS -->
+
+    <section class="section" id="products">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <h2>
+              Featured Products
+            </h2>
+
+            <p>
+              Popular products from DODS Commerce.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="products">
+
+
+          <!-- PRODUCT 1 -->
+
+          <div class="product" id="electronics">
+
+            <div class="product-image">
+              🎧
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-category">
+                Electronics
+              </div>
+
+              <h3>
+                Wireless Headphones
+              </h3>
+
+              <div class="price">
+                ₹2,499
+              </div>
+
+              <a
+                href="DODS001.html"
+                class="product-btn"
+                data-event="product_view_DODS001"
+              >
+                View Product →
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- PRODUCT 2 -->
+
+          <div class="product" id="fashion">
+
+            <div class="product-image">
+              👟
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-category">
+                Fashion
+              </div>
+
+              <h3>
+                Running Shoes
+              </h3>
+
+              <div class="price">
+                ₹1,999
+              </div>
+
+              <a
+                href="DODS002.html"
+                class="product-btn"
+                data-event="product_view_DODS002"
+              >
+                View Product →
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- PRODUCT 3 -->
+
+          <div class="product" id="fitness">
+
+            <div class="product-image">
+              ⌚
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-category">
+                Fitness
+              </div>
+
+              <h3>
+                Smart Watch
+              </h3>
+
+              <div class="price">
+                ₹2,999
+              </div>
+
+              <a
+                href="DODS003.html"
+                class="product-btn"
+                data-event="product_view_DODS003"
+              >
+                View Product →
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- PRODUCT 4 -->
+
+          <div class="product" id="home-living">
+
+            <div class="product-image">
+              🎒
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-category">
+                Accessories
+              </div>
+
+              <h3>
+                Premium Backpack
+              </h3>
+
+              <div class="price">
+                ₹1,499
+              </div>
+
+              <a
+                href="DODS004.html"
+                class="product-btn"
+                data-event="product_view_DODS004"
+              >
+                View Product →
+              </a>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MARKETING LAB -->
+
+    <section class="section" id="offers">
+
+      <div class="container">
+
+        <div class="lab-note">
+
+          <h2>
+            🧪 E-commerce Marketing Lab
+          </h2>
+
+          <p>
+            This storefront is a testing environment for
+            performance marketers. You can practice product
+            tracking, product-view events, add-to-cart,
+            checkout, purchase journeys, UTM tracking,
+            Google Ads, Meta Ads, GA4, GTM and CRO.
+            Tracking is intentionally not installed automatically.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+
+        <div class="footer-column">
+
+          <h3>
+            DODS Commerce
+          </h3>
+
+          <p>
+            Practical e-commerce testing environment.
+          </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>
+            Shop
+          </h3>
+
+          <a href="#categories">
+            Categories
+          </a>
+
+          <a href="#products">
+            Featured Products
+          </a>
+
+          <a href="cart.html">
+            Cart
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>
+            Marketing Lab
+          </h3>
+
+          <a href="catalog-exporter.html">
+            Catalog Exporter
+          </a>
+
+          <a href="../../dashboard.html">
+            Lab Dashboard
+          </a>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="copyright">
+        DODS Commerce © 2026 — Performance Marketing Lab
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
