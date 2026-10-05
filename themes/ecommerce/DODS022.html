@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cushion Cover Set — DODSCommerce</title><link rel="stylesheet" href="styles.css"></head><body><div class="shipping">🚚 Free Shipping on Orders Above ₹999 &nbsp; | &nbsp; Easy 7-Day Returns</div>
+<header class="header"><div class="header-main">
+<a class="logo" href="index.html">DODS<span>Commerce</span></a>
+<form class="search" id="search-form"><input id="search-input" placeholder="Search products..."><button>Search</button></form>
+<div class="header-links"><a href="index.html#categories">Shop</a><a href="catalog-exporter.html">Marketing Tools</a><a href="cart.html">🛒 Cart <span id="cart-count">(0)</span></a></div>
+</div><nav class="nav"><div class="nav-inner">
+<a href="index.html">Home</a><a href="index.html#products">All Products</a><a href="index.html#category-electronics">Electronics</a><a href="index.html#category-fashion">Fashion</a><a href="index.html#category-fitness">Fitness</a><a href="index.html#category-home-living">Home &amp; Living</a><a href="index.html#category-accessories">Accessories</a><a href="index.html#offers">Offers</a><a href="catalog-exporter.html">🛠️ Marketing Tools</a>
+</div></nav></header>
+<main class="wrap"><div class="crumb"><a href="index.html">Home</a> / <a href="index.html#products">All Products</a> / Cushion Cover Set</div>
+<section class="detail"><div class="panel"><div class="detail-image"><img src="assets/products/DODS022.svg" alt="Cushion Cover Set"></div></div>
+<div class="panel"><span class="badge">DEMO PRODUCT</span><h1>Cushion Cover Set</h1><div class="rating">★★★★★ <span class="muted">(Demo Reviews)</span></div><p class="muted">Decorative cushion covers to refresh your living space.</p><div class="price-large">₹599</div><div class="muted">Inclusive of demo taxes · Free delivery</div>
+<div class="meta"><div><b>Product ID:</b> DODS022</div><div><b>Category:</b> Home &amp; Living</div><div><b>Availability:</b> In stock</div><div><b>Brand:</b> DODS</div></div>
+<div><b>Quantity</b><div class="qty" style="margin-top:7px"><button id="minus">−</button><span id="qty">1</span><button id="plus">+</button></div></div>
+<div class="buy-row"><button class="btn btn-dark" id="add" data-event="add_to_cart">Add to Cart</button><button class="btn btn-light" id="buy" data-event="begin_checkout">Buy &amp; Continue to Cart</button></div>
+<button class="btn btn-light wishlist" id="wish" data-event="add_to_wishlist">♡ Wishlist</button>
+<div class="tracking" style="margin-top:18px">🧪 No Meta Pixel, GTM, GA4, Google Ads tag or CAPI is installed. These data-* attributes are intentional tracking hooks.</div>
+</div></section></main><footer class="footer"><div class="footer-inner"><div><h3>DODSCommerce</h3><p>Performance marketing lab storefront for campaign, funnel, catalog and conversion testing.</p></div><div><h3>Shop</h3><a href="index.html#products">All Products</a><a href="cart.html">Cart</a></div><div><h3>Lab Tools</h3><a href="catalog-exporter.html">Catalog Exporter</a></div><div><h3>Checkout</h3><a href="checkout.html">Checkout</a><a href="thank-you.html">Thank You</a></div></div></footer>
+<script src="app.js"></script><script>
+const PRODUCT={id:"DODS022",name:"Cushion Cover Set",category:"Home & Living",price:599,image:"assets/products/DODS022.svg",qty:1};
+let q=1;document.getElementById("minus").onclick=()=>{q=Math.max(1,q-1);document.getElementById("qty").textContent=q};document.getElementById("plus").onclick=()=>{q++;document.getElementById("qty").textContent=q};
+document.getElementById("add").onclick=()=>addToCart({...PRODUCT,qty:q},false);
+document.getElementById("buy").onclick=()=>addToCart({...PRODUCT,qty:q},true);
+document.getElementById("wish").onclick=()=>toggleWish(PRODUCT);
+</script></body></html>
