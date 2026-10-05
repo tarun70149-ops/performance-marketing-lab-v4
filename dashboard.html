@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard | Performance Marketing Lab</title>
+
+  <meta
+    name="description"
+    content="Performance Marketing Lab testing environment dashboard."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0f19;
+      color: #ffffff;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: #0b0f19;
+    }
+
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #6ee7ff;
+    }
+
+    .back {
+      color: #aab4c5;
+      font-size: 14px;
+    }
+
+    .back:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      padding: 75px 0 50px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(110,231,255,0.08);
+      border: 1px solid rgba(110,231,255,0.2);
+      color: #6ee7ff;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 60px);
+      letter-spacing: -2px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: #9da7b9;
+      line-height: 1.7;
+    }
+
+    .labs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      padding-bottom: 70px;
+    }
+
+    .card {
+      padding: 32px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.025);
+    }
+
+    .icon {
+      font-size: 36px;
+      margin-bottom: 18px;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(110,231,255,0.08);
+      color: #6ee7ff;
+      font-size: 11px;
+      margin-bottom: 18px;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #929caf;
+      line-height: 1.65;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 17px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .btn:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .info {
+      margin-bottom: 70px;
+      padding: 32px;
+      border-radius: 18px;
+      background: #111827;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .info h2 {
+      margin-bottom: 12px;
+    }
+
+    .info p {
+      color: #9da7b9;
+      line-height: 1.7;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 30px 0;
+      text-align: center;
+      color: #737d90;
+      font-size: 13px;
+    }
+
+    @media (max-width: 750px) {
+      .labs {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 55px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+
+      <a href="index.html" class="logo">
+        Performance<span>Lab</span>
+      </a>
+
+      <a href="index.html" class="back">
+        ← Back to Home
+      </a>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="badge">
+          LAB CONTROL CENTER
+        </div>
+
+        <h1>
+          Choose Your Lab
+        </h1>
+
+        <p>
+          Select a website environment and practice real-world
+          performance marketing, tracking, analytics, CRO and
+          conversion optimization.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <div class="container">
+
+        <div class="labs">
+
+
+          <!-- DENTAL -->
+
+          <div class="card">
+
+            <div class="icon">
+              🦷
+            </div>
+
+            <div class="status">
+              READY
+            </div>
+
+            <h2>
+              Dental Lead Generation
+            </h2>
+
+            <p>
+              Practice lead generation using a realistic dental
+              clinic website. Test appointment forms, CTA clicks,
+              landing pages and lead conversion journeys.
+            </p>
+
+            <a
+              href="themes/dental/index.html"
+              class="btn"
+            >
+              Open Dental Lab →
+            </a>
+
+          </div>
+
+
+          <!-- E-COMMERCE -->
+
+          <div class="card">
+
+            <div class="icon">
+              🛒
+            </div>
+
+            <div class="status">
+              READY
+            </div>
+
+            <h2>
+              E-commerce
+            </h2>
+
+            <p>
+              Practice product views, add-to-cart, cart,
+              checkout and purchase journeys using a complete
+              e-commerce environment.
+            </p>
+
+            <a
+              href="themes/ecommerce/index.html"
+              class="btn"
+            >
+              Open E-commerce Lab →
+            </a>
+
+          </div>
+
+
+          <!-- BUSINESS -->
+
+          <div class="card">
+
+            <div class="icon">
+              🏢
+            </div>
+
+            <div class="status">
+              COMING SOON
+            </div>
+
+            <h2>
+              Business / Services
+            </h2>
+
+            <p>
+              Future environment for high-ticket services,
+              consultation funnels and lead generation.
+            </p>
+
+            <span class="btn">
+              Coming Soon
+            </span>
+
+          </div>
+
+
+          <!-- BLOG -->
+
+          <div class="card">
+
+            <div class="icon">
+              📝
+            </div>
+
+            <div class="status">
+              COMING SOON
+            </div>
+
+            <h2>
+              Blog / Content
+            </h2>
+
+            <p>
+              Future content environment for SEO, engagement,
+              content funnels and audience-building experiments.
+            </p>
+
+            <span class="btn">
+              Coming Soon
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="info">
+
+          <h2>
+            🧪 Your Tracking. Your Experiment.
+          </h2>
+
+          <p>
+            The Lab provides the website and conversion journey.
+            You configure your own tracking and measurement system.
+            Practice Meta Pixel, Google Ads, GTM, GA4, UTM tracking,
+            DataLayer, event testing and CRO yourself.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="container">
+      Performance Marketing Lab © 2026
+    </div>
+
+  </footer>
+
+</body>
+</html>
