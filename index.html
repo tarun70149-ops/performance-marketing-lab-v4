@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Performance Marketing Lab</title>
+
+  <meta
+    name="description"
+    content="A practical Performance Marketing Lab for testing websites, funnels, tracking, CRO, analytics and paid-media workflows."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0f19;
+      color: #ffffff;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(11,15,25,0.95);
+    }
+
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #6ee7ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      color: #b8c0d0;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      padding: 110px 0 90px;
+      text-align: center;
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(65,160,255,0.18),
+          transparent 35%
+        ),
+        #0b0f19;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(110,231,255,0.3);
+      border-radius: 999px;
+      color: #6ee7ff;
+      font-size: 13px;
+      margin-bottom: 24px;
+      background: rgba(110,231,255,0.05);
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      margin: auto;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+      color: #6ee7ff;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 28px auto 0;
+      color: #aeb7c8;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      margin-top: 38px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background: #6ee7ff;
+      color: #071018;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.05);
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #929caf;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .feature {
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.025);
+    }
+
+    .feature-icon {
+      font-size: 30px;
+      margin-bottom: 18px;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .feature p {
+      color: #929caf;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .principle {
+      padding: 40px;
+      border-radius: 18px;
+      background: #111827;
+      border: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+
+    .principle h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .principle p {
+      max-width: 750px;
+      margin: auto;
+      color: #a7b0c0;
+      line-height: 1.7;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 30px 0;
+      color: #737d90;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 80px 0 60px;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+
+      <a href="index.html" class="logo">
+        Performance<span>Lab</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="#about">About</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="badge">
+          PERFORMANCE MARKETING LAB
+        </div>
+
+        <h1>
+          Build. <span>Test.</span> Learn.
+        </h1>
+
+        <p>
+          A practical laboratory for testing websites, funnels,
+          CRO, analytics, conversion tracking and paid-media
+          workflows.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            href="dashboard.html"
+            class="btn btn-primary"
+          >
+            Enter Lab →
+          </a>
+
+          <a
+            href="#about"
+            class="btn btn-secondary"
+          >
+            Learn More
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2>
+            What Can You Test?
+          </h2>
+
+          <p>
+            Practice real-world performance marketing.
+          </p>
+
+        </div>
+
+
+        <div class="features">
+
+          <div class="feature">
+
+            <div class="feature-icon">
+              🎯
+            </div>
+
+            <h3>
+              Conversion Tracking
+            </h3>
+
+            <p>
+              Practice event tracking for leads,
+              products, carts, checkout and purchases.
+            </p>
+
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-icon">
+              📊
+            </div>
+
+            <h3>
+              Analytics
+            </h3>
+
+            <p>
+              Build and test measurement systems using
+              GTM, GA4, UTM parameters and ad platforms.
+            </p>
+
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-icon">
+              🚀
+            </div>
+
+            <h3>
+              CRO & Funnels
+            </h3>
+
+            <p>
+              Test landing pages, forms, CTAs,
+              checkout flows and conversion journeys.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section" id="about">
+
+      <div class="container">
+
+        <div class="principle">
+
+          <h2>
+            🧪 This Is A Marketing Laboratory
+          </h2>
+
+          <p>
+            The Lab provides realistic website environments
+            and conversion journeys. You build and configure
+            your own tracking, analytics, advertising and
+            optimization systems.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="container">
+      Performance Marketing Lab © 2026
+    </div>
+
+  </footer>
+
+</body>
+</html>
