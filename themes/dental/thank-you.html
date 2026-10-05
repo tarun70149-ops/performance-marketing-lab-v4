@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Thank You | Jaipur Smile Dental Care</title>
+
+  <meta
+    name="description"
+    content="Appointment request received by Jaipur Smile Dental Care."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5fafb;
+      color: #173940;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2ebed;
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #0eaaa1;
+    }
+
+    .home-link {
+      color: #65757c;
+      font-size: 14px;
+    }
+
+    .home-link:hover {
+      color: #0eaaa1;
+    }
+
+    /* THANK YOU */
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 70px 0;
+    }
+
+    .thank-you-card {
+      width: min(650px, 100%);
+      background: #ffffff;
+      border: 1px solid #e0ebed;
+      border-radius: 22px;
+      padding: 55px 40px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(20,60,65,0.08);
+    }
+
+    .success-icon {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 25px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #e1f7f5;
+      color: #0eaaa1;
+      font-size: 45px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #e1f7f5;
+      color: #078b84;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .thank-you-card h1 {
+      font-size: clamp(35px, 6vw, 52px);
+      letter-spacing: -1.5px;
+      margin-bottom: 15px;
+    }
+
+    .thank-you-card p {
+      color: #718087;
+      line-height: 1.7;
+      margin: 0 auto 28px;
+      max-width: 520px;
+    }
+
+    .next-step {
+      background: #f1f8f8;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 28px;
+      color: #53666d;
+      font-size: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 9px;
+      background: #0eaaa1;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .btn:hover {
+      background: #098f88;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #102f35;
+      color: #b4c8ca;
+      padding: 28px 0;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+
+      .thank-you-card {
+        padding: 45px 25px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header>
+
+    <div class="container nav">
+
+      <a href="index.html" class="logo">
+        Jaipur <span>Smile</span> Dental Care
+      </a>
+
+      <a href="index.html" class="home-link">
+        ← Back to Home
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- THANK YOU CONTENT -->
+
+  <main>
+
+    <div class="container">
+
+      <div class="thank-you-card">
+
+        <div class="success-icon">
+          ✓
+        </div>
+
+        <div class="badge">
+          APPOINTMENT REQUEST RECEIVED
+        </div>
+
+        <h1>
+          Thank You!
+        </h1>
+
+        <p>
+          Your appointment request has been received successfully.
+          Our clinic team will contact you regarding your requested
+          consultation.
+        </p>
+
+        <div class="next-step">
+          <strong>What happens next?</strong>
+          <br>
+          The clinic team reviews your request and contacts you
+          to confirm the appointment details.
+        </div>
+
+        <a
+          href="index.html"
+          class="btn"
+          data-event="thank_you_home_click"
+        >
+          Back to Clinic →
+        </a>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+      Jaipur Smile Dental Care © 2026
+    </div>
+
+  </footer>
+
+</body>
+</html>
